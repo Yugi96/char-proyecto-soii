@@ -14,5 +14,19 @@ function render(data){
             </div>
         `);
     }).join(' ');
-    document.getElementById('messages').innerHTML = html;
+
+    var div_messages = document.getElementById('messages');
+    div_messages.innerHTML = html;
+    div_messages.scrollTop = div_messages.scrollHeight;
+}
+
+function addMessage(e){
+    var message = {
+        nickname: document.getElementById('nickname').value,
+        text: document.getElementById('text').value
+    };
+
+    document.getElementById('nickname').style.display = 'none';
+    socket.emit('add-message', message);
+    return false;
 }
