@@ -6,12 +6,17 @@
     , initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>CHAT</title>
+    <link rel="stylesheet" href="css/styles.css">
     <script type="text/javascript" src="/socket.io/socket.io.js"></script>
     <script src="main.js"></script>
 </head>
 <body>
     <h1>CHAT</h1>
     <div class="messages" id="messages"></div>
-
+    <form onsubmit="return addMessage(this)">
+        <input type="text" id="nickname" placeholder="Nickname">
+        <textarea name="text" id="text" placeholder="Mensaje..."></textarea>
+        <input type="submit" value="Enviar">
+    </form>
 </body>
 </html>
