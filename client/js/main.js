@@ -9,8 +9,10 @@ function render(data){
     var html = data.map((message, index)=>{
         return (`
             <div class="message">
-                <strong>${message.nickname}</strong> dice:
-                <p>${message.text}</p>
+                <div>
+                    <strong>${message.nickname}</strong> dice:
+                </div>
+                <span>${message.text}</span>
             </div>
         `);
     }).join(' ');
