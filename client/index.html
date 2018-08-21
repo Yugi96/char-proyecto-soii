@@ -6,17 +6,25 @@
     , initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>CHAT</title>
+    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/styles.css">
     <script type="text/javascript" src="/socket.io/socket.io.js"></script>
-    <script src="main.js"></script>
+    <script src="js/main.js"></script>
+
 </head>
 <body>
-    <h1>CHAT</h1>
-    <div class="messages" id="messages"></div>
-    <form onsubmit="return addMessage(this)">
-        <input type="text" id="nickname" placeholder="Nickname">
-        <textarea name="text" id="text" placeholder="Mensaje..."></textarea>
-        <input type="submit" value="Enviar">
-    </form>
+    <div class="content-nickname" id="content-nickname">
+        <input type="text" id="nickname" placeholder="Nickname" class="input-nickname">
+        <button type="button" class="btn-ingresar" id="btn-ingreso">Ingresar</button>
+    </div>
+    <div class="content-chat" id="content-chat">
+        <h1 class="title-chat">CHAT GRUPAL - SOII</h1>
+        <div class="messages" id="messages"></div>
+        <form onsubmit="return addMessage(this)" class="inputs-messages">
+            <textarea name="text" id="text" placeholder="Mensaje..." class="input-message"></textarea>
+            <input type="submit" value=">" class="btn-enviar">
+        </form>
+    </div>
+    <script src="js/ingreso.js"></script>
 </body>
 </html>
